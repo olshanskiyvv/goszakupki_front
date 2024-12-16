@@ -1,0 +1,119 @@
+/* styles.css */
+.container {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  }
+  
+  .header {
+    margin-top: 20px;
+    font-size: 3.5rem;
+    color: #0c4370;
+  }
+  
+  .registration-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    margin-top: 30px;
+    width: 550px;
+  }
+  
+  .form-column {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="tel"],
+  .input-group input[type="email"],
+  .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .input-group input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .submit-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  
+  .submit-button:hover {
+    background-color: #1976d2;
+  }
+  
+  @media (max-width: 700px) {
+      .registration-form {
+          flex-direction: column; /* Stack columns vertically on smaller screens */
+          width: 90%; /* Adjust width for smaller screens */
+      }
+      .form-column {
+          width: 100%; /* Full width for smaller screens */
+      }
+  }
+
+  .auth {
+    color: #0c4370;
+    font-weight: bold;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-30 {
+    background-image: linear-gradient(to right, #0d3453, #0e4378);
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    width: 20rem;
+    padding: 0 2.4rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all 0.5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(18, 157, 222, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+  }  

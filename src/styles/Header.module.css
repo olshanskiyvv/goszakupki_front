@@ -1,0 +1,27 @@
+
+.Header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2% 15%;
+
+    background-color: #0c4370;
+
+
+}
+
+.Header a, h1{
+    text-decoration: none;
+    color: aliceblue;
+
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.Header a:hover{
+    border-bottom: 2px solid aliceblue ;
+}
+
+.exitBtn{
+    margin-left: 40% !important; 
+}
