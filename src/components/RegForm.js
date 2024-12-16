@@ -20,12 +20,7 @@ function RegForm() {
     const [orgs, setOrgs] = useState(null);
     const [positions, setPositions] = useState(null);
     if (orgs === null) {
-        console.log('Sent')
-        getOrganizations().then(data => {
-            console.log(data);
-            setOrgs(data);
-            console.log(orgs);
-        }).catch(e => console.log(e));
+        getOrganizations().then(data => setOrgs(data)).catch(e => console.log(e));
     }
     if (positions === null) {
         getPositions().then(data => setPositions(data)).catch(e => console.log(e));
