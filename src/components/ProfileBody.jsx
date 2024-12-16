@@ -6,17 +6,23 @@ import { Navigate } from "react-router-dom";
 
 export default function ProfileBody(){
     const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption1, setSelectedOption1] = useState('');
-  const [selectedOption2, setSelectedOption2] = useState('');
+  const [selectedAuthority, setSelectedAuthority] = useState('');
+  const [selectedDuty, setSelectedDuty] = useState('');
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   const [authed, setAuthed] = useState(null)
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
 
-  const handleSelectChange1 = (event) => setSelectedOption1(event.target.value);
-  const handleSelectChange2 = (event) => setSelectedOption2(event.target.value);
+  const handleSelectAuthority = (event) => {
+    setSelectedAuthority(event.target.value)
+
+};
+  const handleSelectDuty = (event) => {
+    setSelectedDuty(event.target.value)
+};
     if (authed === null) {
         isAuthed().then(res => setAuthed(res));
+        console.log(user)
     }
 
   if (authed !== null && authed === false) {
@@ -46,21 +52,20 @@ export default function ProfileBody(){
             <div className={styles.modalBody}>
                 <h2>Машиночитаемая доверенность</h2>
                 <div>
-                <select id="option1" value={selectedOption1} onChange={handleSelectChange1}>
+                <select id="option1" value={selectedAuthority} onChange={handleSelectAuthority}>
                     <option value="">Полномочия</option>
-                    <option value="optionA">Option A</option>
-                    <option value="optionB">Option B</option>
+                    {user?.authorities.map(a => <option value={a.id}>{a.header}</option>)}
                 </select>
+                    <div>{user?.authorities.find(a => a.id == selectedAuthority)?.description}</div>
                 </div>
                 <div>
-                <select id="option2" value={selectedOption2} onChange={handleSelectChange2}>
+                <select id="option2" value={selectedDuty} onChange={handleSelectDuty}>
                     <option value="">Обязанности</option>
-                    <option value="optionX">Option X</option>
-                    <option value="optionY">Option Y</option>
+                    {user?.dutyList.map(d => <option value={d.id}>{d.header}</option>)}
                 </select>
+                    <div>{user?.dutyList.find(d => d.id == selectedDuty)?.description}</div>
                 </div>
             </div>
-
           </div>
         </div>
       )}
