@@ -15,13 +15,18 @@ export const getPurchases = async () => {
 }
 
 export const downloadReport = async (reportType, purchaseId, purchaseNumber) => {
-    await client
-      .get('/doc/' + reportType + '/' + purchaseId,
-        {params: {user_id: JSON.parse(localStorage.getItem('user')).id}}
-      )
-      .then(({data}) => fileDownload(data, reportType + '__' + purchaseNumber + '.xlsx'))
-      .catch(e => console.log(e))
-}
+    try {
+      const response = await client.get(`/doc/${reportType}/${purchaseId}`, {
+        params: { 
+          user_id: JSON.parse(localStorage.getItem('user')).id 
+        },
+        responseType: 'blob',
+      });
+      fileDownload(response.data, `${reportType}__${purchaseNumber}.xlsx`);
+    } catch (error) {
+      console.error('Ошибка при скачивании файла:', error);
+    }
+  };
 
 export const downloadDoc =
     async ({path, filename}) => {
