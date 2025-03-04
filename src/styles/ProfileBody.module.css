@@ -54,6 +54,49 @@ p{
     font-size: 30px;
 }
 
+.btnMini{
+    background-color: #0c4370;
+    height: 3em;
+    width: 6em;
+        
+    border-radius: 13px;
+        
+    color: aliceblue;
+    font-size: 30px;
+}
+.btnMiniID{
+        background-color: #aec1d1;
+            height: 3em;
+            width: 15em;
+        
+            border-radius: 7px;
+        
+            color: rgb(25, 70, 113);
+            font-size: 13px;
+                margin-left: 31%;
+}
+
+.aBox{
+    background-color: #aec1d1;
+        
+    color: rgb(25, 70, 113);
+    font-size: 20px;
+    text-align: center;
+    margin-left:30%;
+}
+
+.inputBox{
+    margin-top: 10px;
+    margin-left: 30%;
+}
+
+.pBox{
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 3%;
+    color: rgb(56, 51, 51);
+}
+
 
 /* модальное окно */
 
@@ -69,7 +112,7 @@ p{
   }
   
   .modalContent {
-    background-color: #f6f8e9;
+    background-color: #d2e0ec;
     margin: 15% auto;
     padding: 20px;
     border: 3px solid #0c4370;

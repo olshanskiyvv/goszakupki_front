@@ -2,16 +2,19 @@ import client from "./client";
 
 import fileDownload from 'js-file-download';
 
-export const getOrganizations = async () => {
-    return await (await client.get('/organization/all')).data
+export const getOrganizations =
+    async () => {
+  return await (await client.get('/organization/all')).data
 }
 
-export const getPositions = async () => {
-    return await (await client.get('/position/all')).data
+export const getPositions =
+    async () => {
+  return await (await client.get('/position/all')).data
 }
 
-export const getPurchases = async () => {
-    return await (await client.get('/purchase/all')).data
+export const getPurchases =
+    async () => {
+  return await (await client.get('/purchase/all')).data
 }
 
 export const downloadReport = async (reportType, purchaseId, purchaseNumber) => {
@@ -35,5 +38,10 @@ export const downloadDoc =
           '/document/get/' + path,
           {headers: {Authorization: 'Bearer '}})
       .then(({data}) => fileDownload(data, filename))
+      .catch(e => console.log(e))
+}
+
+export const linkTelegram = async (telegramId, userId) => {
+  await client.post('/user/telegram', {user: userId, telegramId: telegramId})
       .catch(e => console.log(e))
 }
