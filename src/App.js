@@ -7,6 +7,9 @@ import Doc from "./components/documents";
 import Prof from "./components/ProfileBody";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Header } from "./components/Header";
+import CatalogPage from "./pages/catalog-page";
+import { HeaderMaket } from "./components/HeaderMaket";
+import { ProductGrid } from "./components/ProductGrid";
 
 function App() {
   return (<>
@@ -16,6 +19,7 @@ function App() {
         <Route path='/profile' element={<><Header/><Prof/></>}/>
         <Route path='/documents' element={<><Header/><Doc/></>}/>
         <Route path='/sing-up' element={<RegForm/>}/>
+        <Route path='/catalog' element={<><HeaderMaket/><CatalogPage/><ProductGrid/></>}/>
       </Routes>
     </Router>
     </>);
