@@ -2,6 +2,7 @@
   width: 50%;
   max-width: 800px;
   border-collapse: collapse;
+  margin-top: 10px;
   }
 
   .tablePDF{
@@ -25,6 +26,7 @@
   }
   
   .date {
+    margin-top: -10px;
      color: #7f7f7f;
   }
   
@@ -63,7 +65,8 @@
     width: auto;
     font-size: 1.5em;
     margin: 10px 0px;
-    Color:  rgb(101, 141, 193);;
+    Color:  rgb(101, 141, 193);
+    margin-top: 10px;
   }
 
   .SearchBlock{
