@@ -37,6 +37,7 @@
     align-items: center;
     text-align: left;
     margin-left: 20%;
+    padding-top: -10px;
   }
 
   .datePDF {
