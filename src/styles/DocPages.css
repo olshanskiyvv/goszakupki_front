@@ -1,0 +1,118 @@
+.table {
+  width: 50%;
+  max-width: 800px;
+  border-collapse: collapse;
+  }
+
+  .tablePDF{
+    width: 80%;
+    max-width: 1500px;
+    border-collapse: collapse;
+  }
+  
+
+  .row {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cell {
+    padding: 0;
+    margin: 0;
+    margin-left: 4%;
+  }
+  
+  .date {
+     color: #7f7f7f;
+  }
+  
+  
+  .name {
+    text-align: left;
+    margin-left: 20%;
+  }
+
+  .datePDF {
+    color: #7f7f7f;
+ }
+ 
+ 
+ .namePDF {
+   text-align: left;
+   margin-left: 15%;
+ }
+
+  .image {
+      width: 40px;
+      height: 40px;
+      background-position: left;
+      background-repeat: no-repeat;
+  }
+  
+
+  h1{
+    width: auto;
+    font-size: 3em;
+    margin: 10px 0px;
+    Color:  rgb(0, 0, 0);;
+  }
+
+  h2{
+    width: auto;
+    font-size: 1.5em;
+    margin: 10px 0px;
+    Color:  rgb(101, 141, 193);;
+  }
+
+  .SearchBlock{
+    background-color: rgb(213, 211, 211);
+
+    padding: 16px;
+}
+
+.SearchBlock input{
+    width: 50%;
+
+    height: 50px;
+    outline: none;
+}
+
+.SearchBlock p{
+    width: auto;
+
+    font-size: 1.5em;
+    margin: 10px 0px;
+}
+
+.search-bar {
+  width: auto;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: auto; 
+  margin-left: 8px; 
+  vertical-align: middle;
+}

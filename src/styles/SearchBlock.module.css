@@ -1,0 +1,25 @@
+.SearchBlock{
+    background-color: rgb(213, 211, 211);
+
+    padding: 16px;
+}
+
+.SearchBlock input{
+    width: 50%;
+
+    height: 50px;
+    outline: none;
+}
+
+.SearchBlock p{
+    width: auto;
+
+    font-size: 1.5em;
+    margin: 10px 0px;
+}
+
+.SearchArea img{
+    width: 36px;
+    height: 36px;
+    margin-left: 10px;
+}
