@@ -16,7 +16,6 @@
   .row {
     display: flex;
     align-items: center;
-    padding: 4px;
     border-bottom: 1px solid #ccc;
   }
   
@@ -37,7 +36,6 @@
     align-items: center;
     text-align: left;
     margin-left: 20%;
-    padding-top: -10px;
   }
 
   .datePDF {
