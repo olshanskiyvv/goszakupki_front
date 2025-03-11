@@ -16,6 +16,7 @@
   .row {
     display: flex;
     align-items: center;
+    padding: 4px;
     border-bottom: 1px solid #ccc;
   }
   
@@ -34,7 +35,6 @@
   .name {
     display: flex;
     align-items: center;
-    text-align: left;
     margin-left: 20%;
   }
 
