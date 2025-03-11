@@ -21,11 +21,11 @@ const Table = () => {
     <div className="table">
       {data.map((item, index) => (
         <div className="row" key={index}>
-          <div className="cell date">{item.date}
-             <div className="cell name">
+          <div className="cell date">{item.date}</div>
+          <div className="cell name">
             <img src="/pack.png" alt="папка" className="icon" />
             {item.name}
-          </div></div>
+          </div>
         </div>
       ))}
     </div>
