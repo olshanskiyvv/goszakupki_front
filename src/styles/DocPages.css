@@ -3,6 +3,7 @@
   max-width: 800px;
   border-collapse: collapse;
   margin-top: 10px;
+  flex-direction: column;
   }
 
   .tablePDF{
@@ -27,13 +28,13 @@
   
   .date {
     flex: 1;
-     color: #7f7f7f;
+    color: #7f7f7f;
   }
   
   
   .name {
     display: flex;
-  align-items: center;
+    align-items: center;
     text-align: left;
     margin-left: 20%;
   }
