@@ -29,20 +29,22 @@ const LoginPage = () => {
       {isLoggedIn ? (
         <h1>Вы вошли в систему!</h1>
       ) : (
-        <div class="box">
-          <h1 className="header">ГосЗакупки РФ</h1>
-        <div class='cont'>
-        <h2 class='auth'>АВТОРИЗАЦИЯ</h2>
-        <div class="input-container">
-            <input type="text" placeholder="" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <label>Почта</label>
-          </div>
-          <div class='input-container'>
-          <input type='password' placeholder='' value={password} onChange={(e) => setPassword(e.target.value)} />
-          <label>Пароль</label>
-          </div>
-          <button class="button-30" onClick={handleLogin}>Войти</button>
-          <a href='/sing-up'><button class='button-48'>У вас нет аккаунта?</button></a>
+        <div class="login">
+          <div class="box">
+            <h1 className="header">ГосЗакупки РФ</h1>
+          <div class='cont'>
+          <h2 class='auth'>АВТОРИЗАЦИЯ</h2>
+          <div class="input-container">
+              <input type="text" placeholder="" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <label>Почта</label>
+            </div>
+            <div class='input-container'>
+            <input type='password' placeholder='' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <label>Пароль</label>
+            </div>
+            <button class="button-30" onClick={handleLogin}>Войти</button>
+            <a href='/sing-up'><button class='button-48'>У вас нет аккаунта?</button></a>
+            </div>
           </div>
         </div>
       )}

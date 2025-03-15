@@ -1,3 +1,4 @@
+
 .notification-button {
   position: relative;
 }
@@ -86,6 +87,11 @@
   align-items: center;
   min-height: 100vh;
   background-color: #ffffff;
+    background-image: url(../img/back.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 
 .cont{
