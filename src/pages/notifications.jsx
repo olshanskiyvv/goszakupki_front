@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/notifications.css';
+import { downloadNotification, getPurchases } from '../utils/api';
 
 const Account = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedAuthority, setSelectedAuthority] = useState("");
+  const [selectedPurchases, setSelectedPurchases] = useState("");
   const [showPersonalCabinet, setShowPersonalCabinet] = useState(false);
   const [showMyDocuments, setShowMyDocuments] = useState(false);
+  const [purchases, setPurchases] = useState([]);
+
+  useEffect(() => {
+    getPurchases()
+    .then((dataList) => {
+      // console.log(dataList);
+      setPurchases(dataList);
+    })
+    .catch(e => console.log(e));
+  }, [])
 
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
@@ -13,9 +24,16 @@ const Account = () => {
   const togglePersonalCabinet = () => setShowPersonalCabinet(!showPersonalCabinet);
   const toggleMyDocuments = () => setShowMyDocuments(!showMyDocuments);
 
-  const handleSelectAuthority = (event) => {
-    setSelectedAuthority(event.target.value);
+  const handleSelectPurchase = (event) => {
+    setSelectedPurchases(event.target.value);
   };
+    const handleDownload = () => {
+      const number = purchases.find(item => (item.id == selectedPurchases));
+      downloadNotification(
+        selectedPurchases,
+        number?.number,
+      );
+    };
 
   return (
     <div className="container">
@@ -56,7 +74,7 @@ const Account = () => {
           <div className="main-header">Личный кабинет</div>
           <hr className="separator" />
           <div className="justification-header">Извещениe</div>
-          <input type="text" placeholder="Введите номер документа" className="search-bar" />
+          {/* <input type="text" placeholder="Введите номер документа" className="search-bar" />
           <div className="files">
             <div className="file">
               <img src="/word.png" alt="file-icon" /> Извещениe №1925
@@ -67,7 +85,7 @@ const Account = () => {
             <div className="file">
               <img src="/word.png" alt="file-icon" /> Извещениe №5734
             </div>
-          </div>
+          </div> */}
           <button className="blue-button" onClick={handleOpen}>Сформировать документ</button>
 
           {isOpen && (
@@ -75,10 +93,11 @@ const Account = () => {
               <div className="modal-content">
                 <span className="close" onClick={handleClose}>&times;</span>
                 <h2>Формирование документа</h2>
-                <select value={selectedAuthority} onChange={handleSelectAuthority}>
+                <select value={selectedPurchases} onChange={handleSelectPurchase}>
                   <option value="" className="default-option">В выпадающем списке выберите нужный код закупки</option>
-                  {/* {user?.dutyList.map(d => <option value={d.id}>{d.header}</option>)} */}
-                  </select>
+                  {purchases.map((d) => <option value={d.id}>{`${d.number} - ${d.object}`}</option>)}
+                </select>
+                <button className="blue-button" onClick={handleDownload}>Сформировать документ</button>
               </div>
             </div>
           )}

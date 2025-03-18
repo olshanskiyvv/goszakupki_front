@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/notifications.css';
+import { downloadProxy } from '../utils/api';
 
 const Account = () => {
   const [showPersonalCabinet, setShowPersonalCabinet] = useState(false);
@@ -8,6 +9,10 @@ const Account = () => {
 
   const togglePersonalCabinet = () => setShowPersonalCabinet(!showPersonalCabinet);
   const toggleMyDocuments = () => setShowMyDocuments(!showMyDocuments);
+
+  const handleClick = () => {
+    downloadProxy(user.id);
+  }
 
   return (
     <div className="container">
@@ -36,7 +41,7 @@ const Account = () => {
               <div onClick={() => {
                 window.location.href = '/necessity';
               }}>Обоснование потребности в закупке</div>
-               <div onClick={() => {
+              <div onClick={() => {
                 window.location.href = '/notifications';
               }}>Извещения</div>
             </div>
@@ -48,26 +53,28 @@ const Account = () => {
           <div className="main-header">Личный кабинет</div>
           <hr className="separator" />
           <div className="account">
-          <div className="justification">Общие данные</div>
-          <hr className="separator" />
-          <div className="leftSide">
-                <p>Фамилия: {user?.surname}</p>
-                <p>Имя: {user?.name}</p>
-                <p>Отчество: {user?.patronymic}</p>
-                <p>Должность: {user?.position.title}</p>
+            <div className="justification">Общие данные</div>
+            <hr className="separator" />
+            <div className="leftSide">
+              <p>Фамилия: {user?.surname}</p>
+              <p>Имя: {user?.name}</p>
+              <p>Отчество: {user?.patronymic}</p>
+              <p>Должность: {user?.position.title}</p>
             </div>
             <div className="justification">Подробная информация</div>
             <hr className="separator" />
-          <div className="leftSide">
-                <p>Номер телефона: {user?.number}</p>
-                <p>Электронная почта: {user?.email}</p>
-                { user?.organization && 
+            <div className="leftSide">
+              <p>Номер телефона: {user?.number}</p>
+              <p>Электронная почта: {user?.email}</p>
+              {user?.organization &&
                 <>
-                <p>Организация: {user?.organization?.title}</p> 
-                <p>Адрес организации: {user?.organization?.legalAddress}</p>
-                </> 
-            }
+                  <p>Организация: {user?.organization?.title}</p>
+                  <p>Адрес организации: {user?.organization?.legalAddress}</p>
+                </>
+              }
             </div>
+
+            <button className="blue-button" onClick={handleClick}>Сформировать машиночитаемую доверенность</button>
           </div>
         </div>
       </div>
