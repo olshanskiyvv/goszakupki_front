@@ -22,7 +22,7 @@ const LoginPage = () => {
         })
   };
   if (isLoggedIn) {
-    return <Navigate to='/profile' replace/>
+    return <Navigate to = '/docpages' replace />
   }
   return (
     <>

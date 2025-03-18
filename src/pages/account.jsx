@@ -4,7 +4,7 @@ import '../styles/notifications.css';
 const Account = () => {
   const [showPersonalCabinet, setShowPersonalCabinet] = useState(false);
   const [showMyDocuments, setShowMyDocuments] = useState(false);
-
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
   const togglePersonalCabinet = () => setShowPersonalCabinet(!showPersonalCabinet);
   const toggleMyDocuments = () => setShowMyDocuments(!showMyDocuments);
@@ -51,13 +51,23 @@ const Account = () => {
           <div className="justification">Общие данные</div>
           <hr className="separator" />
           <div className="leftSide">
-                {/*<p>Фамилия: {user?.surname}</p>
+                <p>Фамилия: {user?.surname}</p>
                 <p>Имя: {user?.name}</p>
                 <p>Отчество: {user?.patronymic}</p>
-                <p>Должность: {user?.position.title}</p>*/}
+                <p>Должность: {user?.position.title}</p>
             </div>
             <div className="justification">Подробная информация</div>
             <hr className="separator" />
+          <div className="leftSide">
+                <p>Номер телефона: {user?.number}</p>
+                <p>Электронная почта: {user?.email}</p>
+                { user?.organization && 
+                <>
+                <p>Организация: {user?.organization?.title}</p> 
+                <p>Адрес организации: {user?.organization?.legalAddress}</p>
+                </> 
+            }
+            </div>
           </div>
         </div>
       </div>

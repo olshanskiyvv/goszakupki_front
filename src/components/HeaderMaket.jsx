@@ -21,8 +21,8 @@ export function HeaderMaket(){
 
             <div className={styles.HeaderMenu}>
                 <a href="#"><p>Планирование</p></a>
-                <a href="#"><p>Каталог</p></a>
-                <a href="#"><p>Документы</p></a>
+                <a href="/catalog"><p>Каталог</p></a>
+                <a href="/docpages"><p>Документы</p></a>
             </div>
         </div>
     )

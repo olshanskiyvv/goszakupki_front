@@ -44,4 +44,15 @@ export const downloadDoc =
 export const linkTelegram = async (telegramId, userId) => {
   await client.post('/user/telegram', {user: userId, telegramId: telegramId})
       .catch(e => console.log(e))
+} 
+
+export const subTelegram = async (userId, categoryId, isActive) => {
+  console.log(userId, categoryId, isActive);
+  
+  const resp = await client
+             .post(
+                 '/user/subscriptions/' + (isActive ? 'remove' : 'add'),
+                 {user: userId, lotCategoryId: categoryId})
+             .catch(e => console.log(e));
+  return resp.data;
 }
