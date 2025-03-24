@@ -25,7 +25,7 @@ const Table = () => {
           <div className="cell name">
           <a href='./docpagesfile'>
             <img src="/pack.png" alt="папка" className="icon" />
-            </a>
+          </a>
             {item.name}
           </div>
         </div>

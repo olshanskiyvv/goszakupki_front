@@ -82,9 +82,9 @@ const Account = () => {
                 <button className="blue-button" onClick={handleTelegramOpen}>
                     Привязать тг-бот
                 </button>
-                <button className="blue-button_cat">
+                {/* <button className="blue-button_cat">
                     Перейти к подпискам
-                </button>
+                </button> */}
                 {isTelegramInfoOpen && (
                     <div className="modal">
                         <div className="modal-content">

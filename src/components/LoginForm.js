@@ -31,8 +31,9 @@ const LoginPage = () => {
         <h1>Вы вошли в систему!</h1>
       ) : (
         <div class="login">
+          {/* <img className="logoimg" src="/logo.png" alt="карта из лого" styles/> */}
           <div class="box">
-            <h1 className="header">ГосЗакупки РФ</h1>
+            <h1>ГосЗакупки РФ</h1>
           <div class='cont'>
           <h2 class='auth'>АВТОРИЗАЦИЯ</h2>
           <div class="input-container">
