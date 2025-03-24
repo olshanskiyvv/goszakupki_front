@@ -16,8 +16,9 @@ const Account = () => {
     linkTelegram(telegramId, user.id)
     .then(() => {
         alert("Телеграм привязан");
-        forceUpdate();
+        setUser(JSON.parse(localStorage.getItem('user')));
         handleTelegramClose();
+        forceUpdate();
     })
   }
   const [telegramId, setTelegramId] = useState(null)
