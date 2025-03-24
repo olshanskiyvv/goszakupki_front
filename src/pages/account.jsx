@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import '../styles/notifications.css';
-import { downloadProxy } from '../utils/api';
+import { downloadProxy, linkTelegram } from '../utils/api';
 
 const Account = () => {
   const [showPersonalCabinet, setShowPersonalCabinet] = useState(false);
@@ -8,9 +8,17 @@ const Account = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
   const togglePersonalCabinet = () => setShowPersonalCabinet(!showPersonalCabinet);
   const toggleMyDocuments = () => setShowMyDocuments(!showMyDocuments);
-
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
   const handleClick = () => {
     downloadProxy(user.id);
+  }
+  const handleTelegramLink = () => {
+    linkTelegram(telegramId, user.id)
+    .then(() => {
+        alert("Телеграм привязан");
+        forceUpdate();
+        handleTelegramClose();
+    })
   }
   const [telegramId, setTelegramId] = useState(null)
   const [isTelegramInfoOpen, setIsTelegramOpen] = useState(false);
@@ -79,12 +87,16 @@ const Account = () => {
               }
             </div>
             <div className='Telegram'>
-                <button className="blue-button" onClick={handleTelegramOpen}>
-                    Привязать тг-бот
+              {user.telegramId ? 
+                <a href='/catalog'>
+                <button className="blue-button_cat">
+                  Перейти к подпискам
                 </button>
-                {/* <button className="blue-button_cat">
-                    Перейти к подпискам
-                </button> */}
+              </a>
+                
+                : <button className="blue-button" onClick={handleTelegramOpen}>
+                  Привязать тг-бот
+                </button>}
                 {isTelegramInfoOpen && (
                     <div className="modal">
                         <div className="modal-content">
@@ -94,8 +106,8 @@ const Account = () => {
                         </a>
                             <h4 className="pBox">или наберите в поиске контактов @goszakupki_alert_bot. Нажмите /start</h4>
                             <input type="text" className="inputBox" placeholder="идентификатор" onChange={(e)=>{setTelegramId(e.target.value)}}/>
-                            <h4 className="pBox">введите идентификатор, который вам прислал тг-бот</h4>
-                            <button className="blue-button">
+                            <h4 className="pBox">Введите идентификатор, который вам прислал тг-бот</h4>
+                    <button className="blue-button" onClick={handleTelegramLink}>
                                 Привязать
                             </button>
                         </div>

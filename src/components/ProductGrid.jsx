@@ -14,12 +14,13 @@ const productsList = [
 ];
 
 export function ProductGrid() {
-    const [products, setProducts] = useState(productsList);
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+    const [products, setProducts] = useState(productsList);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
 
     useEffect(() => {
         updateSubs(user.subscriptions);
+        forceUpdate();
     }, [])
 
     const updateSubs = (activeSubs) => {

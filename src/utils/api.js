@@ -64,6 +64,11 @@ export const downloadDoc =
 export const linkTelegram =
     async (telegramId, userId) => {
   await client.post('/user/telegram', {user: userId, telegramId: telegramId})
+      .then(r => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        user.telegramId = telegramId;
+        localStorage.setItem('user', JSON.stringify(user));
+      })
       .catch(e => console.log(e))
 }
 
