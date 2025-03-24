@@ -25,7 +25,9 @@ const Table = () => {
         <div className="row" key={index}>
           <div className="cell date">{item.date}</div>
           <div className="cell name">
+            <a href='./docpagesmiddle'>
             <img src="/pack.png" alt="папка" className="icon" />
+            </a>
             {item.name}
           </div>
         </div>

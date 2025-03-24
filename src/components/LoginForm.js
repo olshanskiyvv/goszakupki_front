@@ -11,15 +11,16 @@ const LoginPage = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    client.post('user/sign/in', {email: email, password: password})
-        .then(({data}) => {
-          localStorage.setItem('user', JSON.stringify(data));
-          setLoggedIn(true);
-        })
-        .catch((e) => {
-          alert('Неверные учетные данные');
-          console.log(e);
-        })
+    setLoggedIn(true);
+    // client.post('user/sign/in', {email: email, password: password})
+    //     .then(({data}) => {
+    //       localStorage.setItem('user', JSON.stringify(data));
+    //       setLoggedIn(true);
+    //     })
+    //     .catch((e) => {
+    //       alert('Неверные учетные данные');
+    //       console.log(e);
+    //     })
   };
   if (isLoggedIn) {
     return <Navigate to = '/docpages' replace />

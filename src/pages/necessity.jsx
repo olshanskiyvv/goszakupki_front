@@ -41,9 +41,11 @@ const Account = () => {
       <div className="menu">
         <div className="sidebar">
           <div className="header-container">
-            <div className="headerImg">
-              <img src="/russia.png" alt="Изображение России" />
-            </div>
+          <div className="headerImg">
+              <a href='./docpages'>
+                <img src="/russia.png" alt="Изображение России" />
+              </a>
+          </div>
             <div className="header">ЕИС</div>
           </div>
           <div className="personal-cabinet" onClick={togglePersonalCabinet}>

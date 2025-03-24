@@ -41,7 +41,9 @@ const Account = () => {
         <div className="sidebar">
           <div className="header-container">
             <div className="headerImg">
-              <img src="/russia.png" alt="Изображение России" />
+              <a href='./docpages'>
+                <img src="/russia.png" alt="Изображение России" />
+              </a>
             </div>
             <div className="header">ЕИС</div>
           </div>
