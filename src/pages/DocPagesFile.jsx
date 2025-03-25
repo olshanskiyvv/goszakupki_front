@@ -21,10 +21,12 @@ const Table = () => {
       {data.map((item, index) => (
         <div className="row" key={index}>
           <div className="cell datePDF">{item.date}</div>
+          <a href='https://minjust.gov.ru/uploaded/files/obobshchestvennyhobedineniyah0.docx'>
           <div className="cell namePDF">
             <img src="/pdf.png" alt="папка" className="icon" />
             {item.name}
           </div>
+          </a>
         </div>
       ))}
     </div>
